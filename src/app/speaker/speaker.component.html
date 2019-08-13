@@ -1,0 +1,73 @@
+<!------------------------------ Header ------------------------------------- -->
+<div class="container-fluid mt-2 bg-dark">
+    <button class="btn text-white" routerLink="" style="font-weight:bold;">Home</button>&nbsp;
+    <button class="btn text-white" routerLink="../category">Shop by Category</button>&nbsp;
+    <button class="btn text-white"><a class="text-white"
+        href="https://www.amazon.in/ap/signin?_encoding=UTF8&openid.assoc_handle=inflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%2Fgp%2Fyourstore%2Fcard%3Fie%3DUTF8%26ref_%3Dcust_rec_intestitial_signin">Your
+        Amazon.in</a></button>&nbsp;
+    <button class="btn text-white">Today's Deals</button>&nbsp;
+    <button class="btn text-white">Amazon Pay</button>&nbsp;
+    <button class="btn text-white">sell</button>&nbsp;
+    <button class="btn text-white">Customer Service</button>&nbsp;
+    <button class="btn text-white">SignIn</button>&nbsp;
+    <span class="text-white"><i class="fa fa-shopping-cart" style="text-align:left">Cart: {{cartItem}}</i></span>
+  </div>
+  <!-- ------------------------------End Header--------------------------------->
+  
+
+<div *ngFor="let x of dataInfo">
+
+  <div class="row">
+    <div class="col-lg-1">
+      <img src="../assets/jbl1.png" alt="Image" height="80px" width="70px">
+      <img src="../assets/jbl2.png" alt="Image" height="80px" width="70px">
+      <img src="../assets/jbl3.png" alt="Image" height="80px" width="70px">
+      <img src="../assets/jbl4.png" alt="Image" height="80px" width="70px">
+      <img src="../assets/jbl5.png" alt="Image" height="80px" width="70px">
+    </div>
+
+    <div class="col-lg-4">
+      <img src="{{x.imageUrl}}" alt="Image" height="450px" width="400px">
+    </div>
+
+    <div class="col-lg-4">
+        <h2>{{x.title}}</h2>
+        by <a href="#">JBL</a>
+        <hr>
+        M.R.P.: <del>₹ 2699.00</del>
+        <div>
+          Price: <span class="text-danger" style="font-weight: bold">{{x.price}}</span>
+        </div>
+        <hr>
+
+        <a href="#" style="color:red;">{{x.reviewCount}} customer reviews</a><br>
+
+        <input type="button" value="By Feature Rating" (click)="function1()" class="btn btn-outline-danger">&nbsp;&nbsp;
+        <br><br>
+        <table class="table table-hover" *ngFor="let x of inf">
+          <tr *ngFor="let y of x.topScores">
+            <td>{{y.topic}} </td>&nbsp;&nbsp;
+            <td>&nbsp;&nbsp;{{y.score}}</td>&nbsp;&nbsp;&nbsp;
+          </tr>
+        </table>
+        <hr>
+        <p>Category: <a href="">{{x.sourceCategory}}</a>. Tags: <a href="">Awesome</a>, <a href="">Best</a>,
+          <a href="">Sale</a>, <a href="">Bluetooth</a>. </p>
+    </div>
+
+    <div class="col-lg-3 mt-5">
+      <div class="container ">
+        <form>
+          <div class="form-group jumbotron">
+            <p>Quantity: </p>
+            <input type="number" size="4" class="form-control" value="1" [(ngModel)]="cartItem" name="quantity" min="1"
+              step="1">&nbsp;
+            <button class="btn btn-warning btn-border form-control" type="submit">Add to cart</button>&nbsp;
+            <button class="btn btn-warning form-control" href="#">Buy now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+  </div>
+</div>

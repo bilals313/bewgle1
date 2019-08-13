@@ -1,0 +1,39 @@
+<!------------------------------ Header ------------------------------------- -->
+<div class="container-fluid mt-2 bg-dark">
+  <button class="btn text-white" routerLink="" style="font-weight:bold;">Home</button>&nbsp;
+  <button class="btn text-white" routerLink="category">Shop by Category</button>&nbsp;
+  <button class="btn text-white"><a class="text-white"
+      href="https://www.amazon.in/ap/signin?_encoding=UTF8&openid.assoc_handle=inflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%2Fgp%2Fyourstore%2Fcard%3Fie%3DUTF8%26ref_%3Dcust_rec_intestitial_signin">Your
+      Amazon.in</a></button>&nbsp;
+  <button class="btn text-white">Today's Deals</button>&nbsp;
+  <button class="btn text-white">Amazon Pay</button>&nbsp;
+  <button class="btn text-white">sell</button>&nbsp;
+  <button class="btn text-white">Customer Service</button>&nbsp;
+  <button class="btn text-white">SignIn</button>&nbsp;
+  <span class="text-white"><i class="fa fa-shopping-cart" style="text-align:left">Cart: {{cartItem}}</i></span>
+</div>
+<!-- ------------------------------End Header--------------------------------->
+
+<div class="container mt-5" *ngFor="let x of dataInfo">
+
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+      <img src="{{x.imageUrl}}" alt="" height="400px" width="350px">
+    </div>
+
+    <div class="col-sm-4" style="text-align: center; margin: 60px 60px 60px 60px">
+      <div>
+        <h2>{{x.title}}</h2>
+        by JBL On
+         <a href="https://www.amazon.in/ap/signin?_encoding=UTF8&openid.assoc_handle=inflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%2Fgp%2Fyourstore%2Fcard%3Fie%3DUTF8%26ref_%3Dcust_rec_intestitial_signin">{{x.domain}}</a>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+<div class="container">
+  <h4>See Details and Buy Product through below Steps:</h4>
+  Click on Shop by Category--> Bluetooth Speakers--> Buy Product/ Add in Cart
+</div>
